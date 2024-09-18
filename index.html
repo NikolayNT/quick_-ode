@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>Шарик</title>
 <script>
-var canvas = document.getElementById('mainCanvas');
 var ctx;
 var x = 300;
 var y = 150;
@@ -12,6 +11,8 @@ var dx = 1;
 var dy = 1;
 
 function init() {
+    var canvas = document.getElementById('mainCanvas');
+
     ctx = canvas.getContext('2d');
     console.log('work')
     return setInterval(draw, 10);

@@ -8,6 +8,7 @@
 
 function init() {
     var canvas = document.getElementById('mainCanvas');
+    const button = document.getElementById('button').style.visibility = 'hidden';
 var ctx;
     ctx = canvas.getContext('2d');
     console.log('work')
@@ -41,6 +42,6 @@ function draw() {
 </head>
 <body>
     <canvas id="mainCanvas" style="background-color:white;" height="300" width="300">Canvas element not loading.</canvas>
-    <button onclick="init()">Бейся о стену</button>
+    <button  id="button" onclick="init()" >Бейся о стену</button>
 </body>
 </html>

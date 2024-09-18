@@ -1,56 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Дата и время</title>
-  <script>
-        var canvas = document.getElementById('mainCanvas');
-var ctx;
-var x = 300;
-var y = 150;
-var dx = 1;
-var dy = 1;
-
-function init() {
-    ctx = canvas.getContext('2d');
-    return setInterval(draw, 10);
-}
-
-function draw() {
-    ctx.clearRect(0,0,300,300);
-    ctx.beginPath();
-    ctx.arc(x, y, 20, 0, Math.PI*2, true); 
-    ctx.closePath();
-    ctx.fill();
-    x += dx;
-    y += dy;
-    if (x > 300 || x < 0) {
-         dx *= -1;   
-    }
-    if (y > 300 || y < 0) {
-         dy *= -1;   
-    }
-}
-
-window.onload = init();
-     function displayTime() {
+<html>
+<head>
+<meta charset="utf-8">
+<title>Электронные часы</title>
+<script>
+function displayTime() {
     let element = document.getElementById("clock"); // Найти элемент с id="clock" 
     let now = new Date();    // Получить текущее время
     element.innerHTML = now.toLocaleTimeString(); // Отобразить время
     setTimeout(displayTime, 1000);    // Вызывать функцию каждую секунду
 }
 window.onload = displayTime; // Начать отображение времени после загрузки документа
-    </script> 
+
+</script>
 </head>
 <body>
-    
- <h1>Электронные часы</h1> 
+    <h1>Электронные часы</h1> 
     <div id="clock"></div>
- <canvas id="mainCanvas" style="background-color:white;" height="300" width="300">Canvas element not loading.</canvas>
-</body>  
+</body>
 </html>
-
-<style>
- body { background: grey; }
-</style>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Дата и время</title>
+</head>
+<body>
+    <script>
+        var canvas = document.getElementById('mainCanvas');
+var ctx;
+var x = 300;
+var y = 150;
+var dx = 1;
+var dy = 1;
+
+function init() {
+    ctx = canvas.getContext('2d');
+    return setInterval(draw, 10);
+}
+
+function draw() {
+    ctx.clearRect(0,0,300,300);
+    ctx.beginPath();
+    ctx.arc(x, y, 20, 0, Math.PI*2, true); 
+    ctx.closePath();
+    ctx.fill();
+    x += dx;
+    y += dy;
+    if (x > 300 || x < 0) {
+         dx *= -1;   
+    }
+    if (y > 300 || y < 0) {
+         dy *= -1;   
+    }
+}
+
+init();
+    </script> 
+</body>  
+</html>
+
+<style>
+ body { background: grey; }
+</style>

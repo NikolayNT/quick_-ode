@@ -4,13 +4,7 @@
 <meta charset="utf-8">
 <title>Электронные часы</title>
 <script>
-function displayTime() {
-    let element = document.getElementById("clock"); // Найти элемент с id="clock" 
-    let now = new Date();    // Получить текущее время
-    element.innerHTML = now.toLocaleTimeString(); // Отобразить время
-    setTimeout(displayTime, 1000);    // Вызывать функцию каждую секунду
-
-    var canvas = document.getElementById('mainCanvas');
+var canvas = document.getElementById('mainCanvas');
 var ctx;
 var x = 300;
 var y = 150;
@@ -37,17 +31,12 @@ function draw() {
          dy *= -1;   
     }
 }
-
-    init();
-
-}
-window.onload = displayTime; // Начать отображение времени после загрузки документа
+init(); // Начать отображение времени после загрузки документа
 
 </script>
 </head>
 <body>
     <h1>Электронные часы</h1> 
-    <div id="clock"></div>
     <canvas id="mainCanvas" style="background-color:white;" height="300" width="300">Canvas element not loading.</canvas>
 </body>
 </html>

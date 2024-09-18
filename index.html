@@ -8,6 +8,18 @@
 
 function init() {
     var canvas = document.getElementById('mainCanvas');
+
+    img.onload = function () {
+    ctx.drawImage(img, 0, 0);
+    ctx.beginPath();
+    ctx.moveTo(30, 96);
+    ctx.lineTo(70, 66);
+    ctx.lineTo(103, 76);
+    ctx.lineTo(170, 15);
+    ctx.stroke();
+  };
+  img.src = "exp_thin_cross.svg";
+    
     const button = document.getElementById('button').style.visibility = 'hidden';
 var ctx;
     ctx = canvas.getContext('2d');
@@ -43,5 +55,6 @@ function draw() {
 <body>
     <canvas id="mainCanvas" style="background-color:white;" height="300" width="300">Canvas element not loading.</canvas>
     <button  id="button" onclick="init()" >Бейся о стену</button>
+    <img src="exp_thin_cross.svg" />
 </body>
 </html>

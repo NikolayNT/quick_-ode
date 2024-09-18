@@ -13,6 +13,7 @@ var dy = 1;
 
 function init() {
     ctx = canvas.getContext('2d');
+    console.log('work')
     return setInterval(draw, 10);
 }
 
@@ -31,7 +32,7 @@ function draw() {
          dy *= -1;   
     }
 }
-init(); // Начать отображение времени после загрузки документа
+init();
 
 </script>
 </head>
